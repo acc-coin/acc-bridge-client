@@ -13,7 +13,7 @@ services:
       ]
     environment:
       POSTGRES_PASSWORD: 12345678
-      POSTGRES_USER: agora
+      POSTGRES_USER: bridge_user
       POSTGRES_DB: postgres
       PGDATA: /postgresql/data
       POSTGRES_INITDB_ARGS: "-E UTF8 --locale=C"
@@ -21,7 +21,7 @@ services:
       - bridge_db_volume:/postgresql/data
 
   acc-chain-bridge:
-    image: bosagora/acc-bridge-validator:v2.x.x-09f5b2
+    image: bosagora/acc-bridge-validator:v2.x.x-e5aaf9
     container_name: acc-chain-bridge
     restart: always
     volumes:
@@ -32,7 +32,7 @@ services:
       - bridge-db
 
   acc-loyalty-bridge:
-    image: bosagora/acc-bridge-validator:v2.x.x-09f5b2
+    image: bosagora/acc-bridge-validator:v2.x.x-e5aaf9
     container_name: acc-loyalty-bridge
     restart: always
     volumes:
